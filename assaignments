@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+  int employee_id = 0;
+  int hours_worked = 0;
+  int usd_per_hour = 0;
+  int federal_witholding_percent = 0.0;
+  int gross_pay_usd = 0;
+
+   cout << "welcome to my weekly payroll program!!"<< endl;
+   cout << "enter your employee id number(numbers only): "<< endl;
+   cin >>employee_id;
+   cout << "enter number of hours worked (whole numbers only) : "<< endl;
+   cin >>hours_worked;
+   cout <<"enter your hourly rate(numbers only): "<< endl;
+   cin >>usd_per_hour;
+   cout <<"enter the federal witholding rate (numbers only): "<< endl;
+   cin >>federal_witholding_percent;
+double federal_tax_witholding_usd = 0.0;
+  double net_pay_usd = 0.0;
+  gross_pay_usd = hours_worked * usd_per_hour;
+  double decimal_witholding_percentage = federal_witholding_percent / 100.0; 
+  federal_tax_witholding_usd = gross_pay_usd * decimal_witholding_percentage;
+  net_pay_usd = gross_pay_usd - federal_tax_witholding_usd;
+cout <<"your payroll summary will be ready in just a minute!!"<< endl;
+   cout << "Total gross pay:$" << gross_pay_usd << endl;
+   cout << " Federal tax witholding: $" << federal_tax_witholding_usd << endl;
+   cout << " Net pay: $" << net_pay_usd << endl;
+   cout << "thank you for using my payroll program!!" << endl;
+   
+   return 0;
+}
