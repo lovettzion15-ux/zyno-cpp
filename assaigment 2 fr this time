@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+ int oreos_eaten = 0;
+ int oreos_left = 0;
+ 
+ const int cals_per_oreo = 55; 
+ const int cookies_per_serving = 5;
+ 
+ double calories_eaten = 0.0;
+ double calories_left = 0.0;
+ double serving_amount = 0.0;
+ 
+ char choice_char;
+ 
+ cout << "how many oreos did you eat?" << endl;
+ cin >> oreos_eaten;
+ string choice_str;
+ cout << "do you want to know how many calories are left in the pack(yes/no)?"<<endl;
+ cin >> choice_str;
+ if (choice_str == "yes") {
+     cout << "got it how many oreos are left? " << endl;
+     cin >> oreos_left;
+     calories_left = oreos_left * cals_per_oreo;
+      cout << " there are " << calories_left << " calories left in the pack"<<endl;
+} else if (choice_str == "no"){
+     cout <<"got it!" << endl;
+ } else {
+     cout << "invalid input" << endl;
+ }
+ calories_eaten = static_cast<double>(oreos_eaten) * cals_per_oreo;
+ cout << "youve eaten " << calories_eaten <<" calories" << endl;
+ serving_amount = static_cast<double>(oreos_eaten) / cookies_per_serving;
+ cout << " you ate " << serving_amount << " servings" << endl;
+ return 0;
+}
